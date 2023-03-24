@@ -10,7 +10,7 @@ class Diary {
     }
 
     static async getAll() {
-        const response = await db.query("SELECT * FROM diary;");
+        const response = await db.query("SELECT * FROM diary ORDER BY diary_date;");
         return response.rows.map(g => new Diary(g));
     }
 
