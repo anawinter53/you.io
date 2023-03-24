@@ -14,6 +14,7 @@ class Diary {
         return response.rows.map(g => new Diary(g));
     }
 
+    
 
 }
 
