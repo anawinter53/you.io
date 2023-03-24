@@ -18,7 +18,24 @@ class Diary {
     //     const response = await db.query("SELECT RAND(*) FROM diary;")
     // }
 
-    
+    static async getOneById(id) {
+        const response = await db.query("SELECT * FROM diary WHERE diary_id = $1;", [id]);
+        if (response.rows.length != 1) {
+            throw new Error("Unable to locate diary.");
+        }
+        return new Diary(response.rows[0]);
+    }
+
+    static async create(data) {
+        const { diary_date, diary_title, diary_entry } = data;   
+        let response = await db.query('INSERT INTO diary (diary_date, diary_title, diary_entry) VALUES ($1, $2, $3) RETURNING *;', [diary_date, diary_title, diary_entry]);
+
+        if (response.rows.length != 1) {
+            throw new Error("Could not add snack to the database!")
+        }
+
+        return response.rows.map(h => new Snack(h));
+    }
 
 }
 
