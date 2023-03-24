@@ -18,6 +18,8 @@ class Diary {
     //     const response = await db.query("SELECT RAND(*) FROM diary;")
     // }
 
+    
+
 }
 
 module.exports = Diary;
