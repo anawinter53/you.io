@@ -2,9 +2,10 @@ const db = require('../database/connect.js')
 
 class Diary {
 
-    constructor ({ diary_id, diary_date, diary_name, diary_entry }) {
+    constructor ({ diary_id, diary_date, diary_title, diary_name, diary_entry }) {
         this.id = diary_id;
         this.date = diary_date;
+        this.title = diary_title;
         this.name = diary_name;
         this.entry = diary_entry;
     }
@@ -31,12 +32,11 @@ class Diary {
         let response = await db.query('INSERT INTO diary (diary_date, diary_title, diary_entry) VALUES ($1, $2, $3) RETURNING *;', [diary_date, diary_title, diary_entry]);
 
         if (response.rows.length != 1) {
-            throw new Error("Could not add snack to the database!")
+            throw new Error("Could not add death note to the database!")
         }
 
-        return response.rows.map(h => new Snack(h));
+        return response.rows.map(h => new Diary(h));
     }
-
 }
 
 module.exports = Diary;
