@@ -14,7 +14,9 @@ class Diary {
         return response.rows.map(g => new Diary(g));
     }
 
-    
+    // static async getRandom () {
+    //     const response = await db.query("SELECT RAND(*) FROM diary;")
+    // }
 
 }
 
