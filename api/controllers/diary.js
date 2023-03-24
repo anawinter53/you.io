@@ -30,5 +30,5 @@ async function show (req, res) {
 }
 
 module.exports = {
-    index, 
+    index, show
 }
