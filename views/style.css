@@ -1,0 +1,48 @@
+body{
+    background: url('https://marketplace.canva.com/EAE1Q1zYY1c/1/0/1236w/canva-white-simple-lined-diary-page-Mcsnkl40AcM.jpg');
+    background-repeat: 1;
+    background-size: 50dvw 100dvh;
+    overflow: hidden;
+}
+
+#filterPanel{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 165, 46, 0.425);    
+    position: absolute;
+    filter: sepia(0.5);
+    left: 0;
+    top: 0;
+}
+
+#datePage1{
+    position: absolute;
+    left: 36dvw;
+    top: 6.5dvh;
+    line-height: 3.3dvh;
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+#entryPage1{
+    height: 80dvh;
+    width: 40dvw;
+    background: none;
+    padding: 0px 20px;
+    border: none;
+    /* transform: translateX(81px) translateY(112px); */
+    transform: translateX(4dvw) translateY(11.6dvh);
+    text-align: start;
+    font-size: 1.1rem;
+    line-height: 3.2dvh;
+}
+
+#pageSeperation{
+    height: 100dvh;
+    width: 5px;
+    background-color: black;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    left: 50%;
+    top: 0%;
+}
